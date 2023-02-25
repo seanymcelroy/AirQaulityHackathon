@@ -9,10 +9,10 @@ app = Flask(__name__)
 @app.route('/hello')
 def hello():
     response = {'message': 'Hello, World!'}
-    point_of_interest = Point(-73.9869, 40.7484)
-    buffer_radius = 100  # in meters
+    # point_of_interest = Point(-73.9869, 40.7484)
+    # buffer_radius = 100  # in meters
 
-    buffer = geodesic_buffer(point_of_interest, buffer_radius)
+    # buffer = geodesic_buffer(point_of_interest, buffer_radius)
     return jsonify(response)
 
 
