@@ -6,11 +6,11 @@ app = Flask(__name__)
 # define a simple endpoint that takes a GET request
 
 
-@app.route('/hello', methods=['GET'])
+@app.route('/pollution', methods=['GET'])
 def hello():
     df = pd.read_csv('dummy.csv')
     name = request.args.get('coords', 'World')
-    response = {'message': f'Hello, {name}!'}
+    response = {'message': f'Here are you coordinates: {name}!'}
     return jsonify(response)
     # data = df.to_dict(orient='records')
     # return jsonify(data)
