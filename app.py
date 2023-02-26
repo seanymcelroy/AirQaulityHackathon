@@ -9,8 +9,10 @@ app = Flask(__name__)
 @app.route('/pollution', methods=['GET'])
 def hello():
     df = pd.read_csv('dummy.csv')
-    name = request.args.get('coords', 'World')
-    response = {'message': f'Here are you coordinates: {name}!'}
+    lat = request.args.get('lat', 'N/a')
+    long = request.args.get('long', 'N/a')
+    response = {
+        'message': f'Here is your lat: {lat}, Here is your long: {long}!'}
     return jsonify(response)
     # data = df.to_dict(orient='records')
     # return jsonify(data)
