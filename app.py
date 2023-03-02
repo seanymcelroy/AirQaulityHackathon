@@ -8,12 +8,9 @@ app = Flask(__name__)
 
 @app.route('/hello', methods=['GET'])
 def hello():
-    df = pd.read_csv('dummy.csv')
+    # df = pd.read_csv('dummy.csv')
     name = request.args.get('coords', 'World')
-    # response = {'message': f'Here are you coordian, {name}!'}
-    # return jsonify(response)
-    data = df.to_dict(orient='records')
-    return jsonify(data)
+    return jsonify(f'Hello {name}')
 
 
 if __name__ == '__main__':
