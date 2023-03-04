@@ -13,6 +13,13 @@ def hello():
     name = request.args.get('coords', 'World')
     return jsonify(f'Hello {name}')
 
+@app.route('/airquality', methods=['GET'])
+def getAirQuality():
+    # df = pd.read_csv('dummy.csv')
+    lat = request.args.get('lat', 'Not prvided')
+    long= request.args.get('long', 'Not povided')
+    return jsonify(f"Your lat is {lat} and your long is {long}")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
