@@ -4,3 +4,5 @@
 airview_dublincity_measurements_ugm3.csv
 # Ignore compiled Python files
 *.pyc
+
+dummy_frontend/
