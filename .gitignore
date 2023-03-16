@@ -1,5 +1,5 @@
 # Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+.Jupyter/
 
 airview_dublincity_measurements_ugm3.csv
 # Ignore compiled Python files
