@@ -14,9 +14,23 @@ road_segments = gpd.read_file('airview_dublincity_roaddata_shp')
 valid_pm_roads = road_segments.dropna(subset="PM25_ugm3")
 
 
-@app.route('/hello', methods=['GET'])
-def hello():
-    return jsonify(f'Hello World')
+@app.route('/', methods=['GET'])
+def arrival():
+    response = {
+    "status": "success",
+    "message": "Success you've connected to air quality api",
+    "valid_routes": [
+        {
+            "path": "airquality/pm2_5",
+            "params": [
+                {'lat': 'float', 'long': 'float'}
+            ],
+            "methods": ['GET']
+        }
+    ]
+    }
+
+    return jsonify(response)
 
 @app.route('/airquality/pm2_5', methods=['GET'])
 def get_fine_particulate_matter():
