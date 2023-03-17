@@ -24,7 +24,12 @@ def get_fine_particulate_matter():
     long= request.args.get('long')
 
     if not is_valid_lat_long(lat,long):
-        return jsonify("Please send a valid latitude and longitude. e.g 'airquality/pm2_5?lat=53.34372592082202&long=-6.307261762132252'")
+        response = {
+            "error": "Invalid latitude and/or longitude",
+            "message": "Please send a valid latitude and longitude.",
+            "example": "airquality/pm2_5?lat=53.34372592082202&long=-6.307261762132252"
+        }
+        return jsonify(response)
 
     # Step 1. turn road data into distance calculable ITM
     valid_roads_pcs = valid_pm_roads.to_crs(get_irish_coordinate_system())
