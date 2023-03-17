@@ -1,0 +1,6 @@
+Jupyter/
+photos/
+dummy_frontend/
+.gitignore
+*.md
+venv/

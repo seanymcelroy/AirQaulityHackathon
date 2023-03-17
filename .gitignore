@@ -1,8 +1,7 @@
 # Ignore Jupyter Notebook checkpoints
-.Jupyter/
-
-airview_dublincity_measurements_ugm3.csv
-# Ignore compiled Python files
-*.pyc
-
 dummy_frontend/
+.ipynb_checkpoints/*
+*.csv
+airview_dublincity_measurements_ugm3.csv
+*.pyc
+venv/
